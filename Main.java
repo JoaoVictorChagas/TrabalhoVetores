@@ -12,9 +12,9 @@ class Vetores {
 
 
     /**
-     * Ler uma nota do usu·rio
-     * @param mensagem O texto que aparecer· na tela
-     * @return um n˙mero double representando a nota.
+     * Ler uma nota do usu√°rio
+     * @param mensagem O texto que aparecer√° na tela
+     * @return um n√∫mero double representando a nota.
      */
     static double lerNota(String mensagem, double notaMaxima) {
 
@@ -33,30 +33,30 @@ class Vetores {
 
     /**
      * Atualiza o valor da respectiva nota do estudante
-     * @param indiceNota um n˙mero inteiro representando o Ìndice (posiÁ„o) da nota no vetor
+     * @param indiceNota um n√∫mero inteiro representando o √≠ndice (posi√ß√£o) da nota no vetor
      */
     static void atualizarNota(int indiceNota) {
 
         System.out.println();
         notas[indiceNota] = lerNota(NOMES_AVALIACOES[indiceNota], NOTA_MAX_AVALIACOES[indiceNota]);
 
-    } // Fim do mÈtodo atualizarNota
+    } // Fim do m√©todo atualizarNota
 
 
     /**
-     * @param notaFinal A soma de todas as avaliÁıes feita pelo estudante ao longo do semestre
-     * @return uma string representando o status final do estudante, s„o eles: APROVADO, REPROVADO, EM RECUPERA«√O.
+     * @param notaFinal A soma de todas as avali√ß√µes feita pelo estudante ao longo do semestre
+     * @return uma string representando o status final do estudante, s√£o eles: APROVADO, REPROVADO, EM RECUPERA√á√ÉO.
      */
     static String avaliarSituacao(double notaFinal) {
 
         if(notaFinal < 30)
             return "REPROVADO";
         else if (notaFinal < 70)
-            return "EM RECUPERA«√O";
+            return "EM RECUPERA√á√ÉO";
         else
             return "APROVADO";
 
-    } // Fim do mÈtodo avaliarSituacao()
+    } // Fim do m√©todo avaliarSituacao()
 
     static double calcularMedia(double[] notas){
         double media = 0;
@@ -64,7 +64,7 @@ class Vetores {
         for(int i = 0; i < TOTAL_AVALIACOES; i++){
             media += notas[i];
         }
-        media /= TOTAL_AVALIACOES;
+        media = media / TOTAL_AVALIACOES;
 
         return media;
     }
@@ -75,7 +75,7 @@ class Vetores {
         double verificarMaior = 0;
 
         for(int i = 0; i < TOTAL_AVALIACOES; i++){
-            if (notas[i] > verificarMaior){
+            if (verificarMaior < notas[i]){
                 verificarMaior = notas[i];
                 melhorAV = NOMES_AVALIACOES[i];
             }
@@ -85,7 +85,7 @@ class Vetores {
     }
 
     /**
-     * Mostra na tela um relatÛrio das notas do estudante
+     * Mostra na tela um relat√≥rio das notas do estudante
      */
     static void mostrarNotas() {
 
@@ -96,23 +96,23 @@ class Vetores {
 
         for (int i = 0; i < TOTAL_AVALIACOES; i++) {
 
-            System.out.printf("AvaliaÁ„o %s = %.2f pts", NOMES_AVALIACOES[i], notas[i]);
+            System.out.printf("Avalia√ß√£o %s = %.2f pts", NOMES_AVALIACOES[i], notas[i]);
             System.out.println();
             notaFinal += notas[i];
 
         }
 
         System.out.printf("\n Nota Final = %.2f pts", notaFinal);
-        System.out.printf("\n SituaÁ„o = %s", avaliarSituacao(notaFinal));
+        System.out.printf("\n Situa√ß√£o = %s", avaliarSituacao(notaFinal));
         System.out.printf("\n Media geral = %.2f", calcularMedia(notas));
         System.out.printf("\n Melhor Prova = %s", maiorNota(notas));
 
 
-    } // Fim do mÈtodo mostrarNotas()
+    } // Fim do m√©todo mostrarNotas()
 
 
     /**
-     * Exibe o menu principal da aplicaÁ„o
+     * Exibe o menu principal da aplica√ß√£o
      */
     static void mostrarMenu() {
 
@@ -126,7 +126,7 @@ class Vetores {
         System.out.println("[4] Mostrar Notas");
         System.out.println("[0] SAIR");
 
-        System.out.print("\nDigite uma opÁ„o:  ");
+        System.out.print("\nDigite uma op√ß√£o:  ");
         byte opcao = console.nextByte();
 
 
@@ -160,13 +160,13 @@ class Vetores {
 
         mostrarMenu();
 
-    } // Fim do mÈtodo mostrarMenu()
+    } // Fim do m√©todo mostrarMenu()
 
 
     public static void main(String[] args) {
 
         mostrarMenu();
 
-    } // Fim do mÈtodo main();
+    } // Fim do m√©todo main();
 
 } // Fim da classe Main
